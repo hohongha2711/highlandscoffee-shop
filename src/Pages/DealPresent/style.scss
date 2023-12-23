@@ -1,0 +1,45 @@
+.breadcrumb {
+  list-style: none;
+  padding: 10px 0px;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+h1 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.content-page {
+  p {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+.siderbar {
+  font-family: "Open Sans", sans;
+  .aside-filter {
+    .header-filter {
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  button {
+    background-color: #fff !important;
+    color: #777474;
+    border-radius: 0;
+    border: 1px solid #777474;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  button:hover{ 
+    color: #777474;
+    border: 1px solid #777474;
+  }
+}

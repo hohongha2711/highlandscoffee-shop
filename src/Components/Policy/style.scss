@@ -1,0 +1,29 @@
+.policy{ 
+    position: relative;
+    width: calc(100%/8);
+    a{ 
+        text-decoration: none;
+        display: block;
+        text-align: center;
+    }
+    .img-policy{ 
+        max-width: 50px;
+    }
+
+    span{ 
+        text-decoration: none;
+        color:#b5313a;
+        position: relative;
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px){ 
+    .policy{ 
+        width: calc(100%/3);
+        span{ 
+            font-size: 12px;
+        }
+    }
+}

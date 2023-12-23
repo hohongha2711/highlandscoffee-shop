@@ -1,0 +1,91 @@
+.title_uu_dai {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.list-voucher {
+    display: flex;
+  .voucher-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 8px;
+
+    .voucher-item_inner {
+      height: 100%;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid #b5313a;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .title {
+        color: #b5313a;
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+      }
+
+      .content {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 13px;
+      }
+
+      .copy_discount {
+        padding: 3px;
+        margin-top: 5px;
+        position: relative;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .code_zip {
+          margin-bottom: 0px;
+          display: inline-block;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 600;
+          line-height: 22px;
+        }
+
+        .dis_copy_2 {
+          background: #b5313a;
+          color: #fff;
+          border: none;
+          padding: 0px 15px;
+          cursor: pointer;
+          outline: none !important;
+          box-shadow: none;
+          border-radius: 5px;
+          line-height: 24px;
+          height: 24px;
+          font-size: 12px;
+          float: right;
+
+          span {
+            display: block;
+            line-height: 22px;
+            font-size: 12px;
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){ 
+    .list-voucher{ 
+        flex-wrap: wrap;
+        .voucher-item{ 
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-bottom: 5px;
+        }
+    }
+}

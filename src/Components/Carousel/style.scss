@@ -1,0 +1,15 @@
+.banner {
+  .carousel {
+    font-family: "utm-alexander";
+    .active {
+      background-color: #b5313a;
+    }
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 20px;
+    height: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+}
