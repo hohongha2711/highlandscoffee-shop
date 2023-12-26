@@ -1,5 +1,6 @@
 # Updating...
 # Clone giao diện trang web Highlands Coffee CPG
+# Công nghệ sử dụng: ReactJS, Bootstrap, React-Bootstrap
 
 # Getting Started with Create React App
 
