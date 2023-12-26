@@ -1,5 +1,5 @@
 # Updating...
-# CLone giao diện trang web Highlands Coffee CPG
+# Clone giao diện trang web Highlands Coffee CPG
 
 # Getting Started with Create React App
 
