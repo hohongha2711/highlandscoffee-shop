@@ -2,6 +2,7 @@
 # Clone giao diện trang web Highlands Coffee CPG
 # Công nghệ sử dụng: ReactJS, Bootstrap, React-Bootstrap
 # Deploy Vercel App
+## https://highlandscoffee-shop.vercel.app/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
