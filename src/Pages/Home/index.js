@@ -4,6 +4,7 @@ import Voucher from "../../Components/Voucher";
 import FlashSaleSection from "../../Components/FlashSaleSection";
 import SanPhamBanChay from "../../Components/ProductSection/SanPhamBanChay";
 import CaPheRangXay from "../../Components/ProductSection/CaPheRangXay";
+import CapheUongLien from "../../Components/ProductSection/CaPheUongLien";
 
 const Home = () => {
   return (
@@ -41,6 +42,12 @@ const Home = () => {
       <section className="section-san_pham_ban_chay py-3">
         <div className="container">
           <CaPheRangXay />
+        </div>
+      </section>
+
+      <section className="section-ca_phe_uong_lien py-3">
+        <div className="container">
+          <CapheUongLien />
         </div>
       </section>
     </>

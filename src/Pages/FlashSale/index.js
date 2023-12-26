@@ -4,7 +4,7 @@ import Header from "../../Components/Layout/Header";
 const FlashSale = () => {
   return (
     <>
-      <div>Flash Sale</div>
+      <div className="container">Flash Sale</div>
     </>
   );
 };

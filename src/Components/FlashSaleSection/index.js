@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,19 +11,27 @@ import "./style.scss";
 import Product from "../Product";
 
 const FlashSaleSection = () => {
-  const CustomPrevArrow = (props) => (
-    <button {...props} className="slick-arrow slick-prev">
+  const data = require("../../assets/data.json");
+  const [prods, setProds] = useState([]);
+
+  useEffect(() => {
+    const dealProducts = data.filter((product) => product.tab === 'Deal');
+    setProds(dealProducts);
+  }, []);
+
+  const CustomPrevArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
+    <button {...arrowProps} className="slick-arrow slick-prev">
       <FontAwesomeIcon icon={faChevronLeft} />
     </button>
   );
-
-  const CustomNextArrow = (props) => (
-    <button {...props} className="slick-arrow slick-next">
+  const CustomNextArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
+    <button {...arrowProps} className="slick-arrow slick-next">
       <FontAwesomeIcon icon={faChevronRight} />
     </button>
   );
+
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -70,19 +78,19 @@ const FlashSaleSection = () => {
             <a href="/san-pham-noi-bat">DEAL ĐANG DIỄN RA</a>
           </h2>
           <span className="lable_countdown">|</span>
-          <a href="/san-pham-noi-bat" className="view-all">Xem tất cả</a>
+          <a href="/san-pham-noi-bat" className="view-all">
+            Xem tất cả
+          </a>
         </div>
       </div>
       <div className="slider">
-          <Slider {...settings}>
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-              <Product />
-            {/* Thêm các hình ảnh khác vào đây */}
-          </Slider>
+        <Slider {...settings}>
+          {prods[0]?.products?.map((item) => (
+            <Product prod={item} key={item.name} />
+          ))}
+
+          {/* Thêm các hình ảnh khác vào đây */}
+        </Slider>
       </div>
     </div>
   );

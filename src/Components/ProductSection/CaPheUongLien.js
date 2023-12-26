@@ -10,12 +10,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-const CaPheRangXay = () => {
+const CapheUongLien = () => {
   const data = require("../../assets/data.json");
   const [prods, setProds] = useState([]);
 
   useEffect(() => {
-    const dealProducts = data.filter((product) => product.tab === "ca-phe-rang-xay");
+    const dealProducts = data.filter((product) => product.tab === "uong-lien");
     setProds(dealProducts);
   }, [data]);
   const CustomPrevArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
@@ -29,7 +29,7 @@ const CaPheRangXay = () => {
     </button>
   );
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -65,9 +65,9 @@ const CaPheRangXay = () => {
 
   return (
     <div className="slider-product">
-      <a className="sport-title text-center">Cà phê rang xay</a>
+      <a className="sport-title text-center">Cà phê uống liền</a>
       <div className="slider">
-      <Slider {...settings}>
+        <Slider {...settings}>
           {prods[0]?.products?.map((item) => (
             <Product prod={item} key={item.name} />
           ))}
@@ -75,13 +75,14 @@ const CaPheRangXay = () => {
           {/* Thêm các hình ảnh khác vào đây */}
         </Slider>
       </div>
+
       <div className="view-more-content">
         <button className="view-more-product">
-          Xem sản phẩm <b>cà phê rang xay</b>
+          Xem sản phẩm <b>cà phê uống liền</b>
         </button>
       </div>
     </div>
   );
 };
 
-export default CaPheRangXay;
+export default CapheUongLien;

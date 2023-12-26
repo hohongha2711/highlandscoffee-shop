@@ -8,21 +8,28 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 const SanPhamBanChay = () => {
-  const CustomPrevArrow = (props) => (
-    <button {...props} className="slick-arrow slick-prev">
+  const data = require("../../assets/data.json");
+  const [prods, setProds] = useState([]);
+
+  useEffect(() => {
+    const dealProducts = data.filter((product) => product.tab === "ban-chay");
+    setProds(dealProducts);
+  }, [data]);
+  const CustomPrevArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
+    <button {...arrowProps} className="slick-arrow slick-prev">
       <FontAwesomeIcon icon={faChevronLeft} />
     </button>
   );
-
-  const CustomNextArrow = (props) => (
-    <button {...props} className="slick-arrow slick-next">
+  const CustomNextArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
+    <button {...arrowProps} className="slick-arrow slick-next">
       <FontAwesomeIcon icon={faChevronRight} />
     </button>
   );
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -61,12 +68,10 @@ const SanPhamBanChay = () => {
       <a className="sport-title text-center">Sản phẩm bán chạy!</a>
       <div className="slider">
         <Slider {...settings}>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {prods[0]?.products?.map((item) => (
+            <Product prod={item} key={item.name} />
+          ))}
+
           {/* Thêm các hình ảnh khác vào đây */}
         </Slider>
       </div>

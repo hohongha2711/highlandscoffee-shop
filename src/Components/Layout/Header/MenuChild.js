@@ -28,7 +28,7 @@ const MenuChild = () => {
                   className={
                     activeLink === "#" ? "nav-link active" : "nav-link"
                   }
-                  to="/flash-sale"
+                  to="#"
                   onClick={() => {
                     handleLinkClick("/flash-sale");
                   }}
@@ -41,7 +41,7 @@ const MenuChild = () => {
                   className={
                     activeLink === "/khuyen-mai" ? "nav-link active" : "nav-link"
                   }
-                  to="/khuyen-mai"
+                  to="#"
                   onClick={() => {
                     handleLinkClick("/khuyen-mai");
                   }}
@@ -54,7 +54,7 @@ const MenuChild = () => {
                   className={
                     activeLink === "/san-pham-moi" ? "nav-link active" : "nav-link"
                   }
-                  to="/san-pham-moi"
+                  to="#"
                   onClick={() => {
                     handleLinkClick("/san-pham-moi");
                   }}

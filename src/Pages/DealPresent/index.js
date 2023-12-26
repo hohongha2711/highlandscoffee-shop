@@ -2,20 +2,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { Dropdown } from "react-bootstrap";
+import Product from "../../Components/Product";
+import { useEffect, useState } from "react";
 
 const DealPresent = () => {
+  const data = require("../../assets/data.json");
+  const [prods, setProds] = useState([]);
+
+  useEffect(() => {
+    const dealProducts = data.filter((product) => product.tab === "Deal");
+    setProds(dealProducts);
+  }, [data]);
+
   return (
     <div className="container">
       <ul className="breadcrumb">
         <li>
           <a href="/">Trang chủ</a>
         </li>
-        <span className=" px-2">/</span>
+        <span className="px-2">/</span>
         <li className=" text-danger text-uppercase">Deal đang diễn ra</li>
       </ul>
       <img
         src={require("../../Images/slider_1.webp")}
-        alt="image-1"
+        alt="slider-1"
         className="w-100"
       />
       <aside className="siderbar">
@@ -46,6 +56,14 @@ const DealPresent = () => {
           </div>
         </div>
       </aside>
+
+      <div className="row">
+        {prods[0]?.products?.map((item) => (
+          <div className="col-lg-3 col-sm-4 col-6 px-0">
+            <Product prod={item} key={item.name} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

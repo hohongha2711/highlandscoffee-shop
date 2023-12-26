@@ -5,47 +5,49 @@ import {
   faBagShopping,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import Countdown from "./Countdown";
 
-const Product = () => {
+const Product = ({ prod }) => {
+  //console.log(prod);
+  let sale = 0;
+  if (prod.old_price) {
+    sale = ((prod.old_price - prod.price) / prod.old_price) * 100;
+    sale = Math.floor(sale);
+  }
+
   return (
     <div className="product">
       <div className="product-new">
-        <a href="#">
-          <img
-            src={require("../../Images/web-t12-1.webp")}
-            alt="image-product"
-            className=" w-100"
-          />
+        <a href="">
+          <img src={prod.image} alt="product-im" className=" w-100" />
         </a>
 
-        <span className="sale">30%</span>
+        {prod?.old_price && <span className="sale">{sale}%</span>}
 
-        <a href="#" className="title">
-          COMBO 2 Gói Cà Phê Rang Xay Truyền Thống Highlands Coffee 200g/gói
+        <a href="" className="title">
+          {prod.name}
         </a>
 
         <div className="box-price">
           <span className="price">
-            98.000<u>đ</u>
+            {prod.price ? prod.price.toLocaleString("vi-VN") : ""}
+            <u>đ</u>
           </span>
-          <span className="old-price">
-            128.000<u>đ</u>
-          </span>
+          {prod?.old_price && (
+            <span className="old-price">
+              {prod.old_price ? prod.old_price.toLocaleString("vi-VN") : ""}
+              <u>đ</u>
+            </span>
+          )}
         </div>
         <div className="box-rating">
-          <Rating name="disabled" value= {0} disabled />
+          <Rating name="disabled" value={0} disabled />
           <div className="add-cart">
             <FontAwesomeIcon icon={faCartShopping} />
           </div>
         </div>
         <div className="time-viewer">
-          <b>03</b>
-          <span className="time-dot">:</span>
-          <b>13</b>
-          <span className="time-dot">:</span>
-          <b>45</b>
-          <span className="time-dot">:</span>
-          <b>03</b>
+         <Countdown />
         </div>
         <button className="select-buy">
           <span className="mx-2">

@@ -57,7 +57,7 @@ const HeaderMain = () => {
               className={
                 activeLink === "/khuyen-mai" ? "nav-link active" : "nav-link"
               }
-              to="/khuyen-mai"
+              to="#"
               onClick={() => {
                 handleLinkClick("/khuyen-mai");
               }}
@@ -70,7 +70,7 @@ const HeaderMain = () => {
               className={
                 activeLink === "/san-pham-moi" ? "nav-link active" : "nav-link"
               }
-              to="/san-pham-moi"
+              to="#"
               onClick={() => {
                 handleLinkClick("/san-pham-moi");
               }}
